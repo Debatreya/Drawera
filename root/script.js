@@ -65,9 +65,9 @@ canvas.addEventListener("mousemove", (e)=>{
     prevX = currentX;
     prevY = currentY;
 })
-window.addEventListener("touchstart", (e) => draw = true);
-window.addEventListener("touchend", (e) => draw = false);
-canvas.addEventListener("touchmove", (e)=>{
+document.body.addEventListener("touchstart", (e) => draw = true);
+document.body.addEventListener("touchend", (e) => draw = false);
+document.body.addEventListener("touchmove", (e)=>{
     let touch = e.touches[0];
     if(prevX == null || prevY == null || !draw){
         prevX = touch.clientX;
