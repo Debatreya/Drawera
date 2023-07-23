@@ -1,2 +1,2 @@
 # Drawera
-Project made for understanding HTML Canvas
+## Project made for understanding HTML Canvas
