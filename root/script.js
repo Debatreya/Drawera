@@ -65,6 +65,26 @@ canvas.addEventListener("mousemove", (e)=>{
     prevX = currentX;
     prevY = currentY;
 })
+window.addEventListener("touchstart", (e) => draw = true);
+window.addEventListener("touchend", (e) => draw = false);
+canvas.addEventListener("touchmove", (e)=>{
+    if(prevX == null || prevY == null || !draw){
+        prevX = e.clientX;
+        prevY = e.clientY;
+        return;
+    }
+    let currentX = e.clientX;
+    let currentY = e.clientY;
+    // console.log(prevX, prevY);
+    // console.log(currentX, currentY);
+    ctx.beginPath();
+    ctx.moveTo(prevX, prevY);
+    ctx.lineTo(currentX, currentY);
+    ctx.stroke();
+    prevX = currentX;
+    prevY = currentY;
+})
+
 window.addEventListener('resize', ()=>{
     canvas.height = window.innerHeight;
     canvas.width = window.innerWidth;
